@@ -1,3 +1,7 @@
+//Command line arguments
+var args = process.argv.slice(2);
+console.log("Running program with token " + args[0]);
+
 //Import discord.js
 var Discord = require('discord.js');
 
@@ -7,10 +11,8 @@ var spawn = require('child_process').spawnSync;
 //Create an instance of the client
 var client = new Discord.Client();
 
-console.log("Logged in as " + client.user);
-
 //The bot's token
-var token = 'MjU4NjMxODM3ODQzMzI0OTI5.CzNu6Q.lcZMTBQjen2FuMLmPWUfVU0qYW0'
+var token = args[0];
 
 //Run when the bot is ready to run
 client.on('ready', () => {
